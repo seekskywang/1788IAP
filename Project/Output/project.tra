@@ -1,0 +1,47 @@
+*** Creating Trace Output File '.\Output\project.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\output\ex_sdram.o"'
+### List of Objects: adding '".\output\main.o"'
+### List of Objects: adding '".\output\timer.o"'
+### List of Objects: adding '".\output\lpc177x_8x_lcd.o"'
+### List of Objects: adding '".\output\logo.o"'
+### List of Objects: adding '".\output\asciilib.o"'
+### List of Objects: adding '".\output\touchpanel.o"'
+### List of Objects: adding '".\output\use_disp.o"'
+### List of Objects: adding '".\output\key.o"'
+### List of Objects: adding '".\output\test.o"'
+### List of Objects: adding '".\output\globalvalue.o"'
+### List of Objects: adding '".\output\lpc177x_8x_rtc.o"'
+### List of Objects: adding '".\output\rtc.o"'
+### List of Objects: adding '".\output\startup_lpc177x_8x.o"'
+### List of Objects: adding '".\output\system_lpc177x_8x.o"'
+### List of Objects: adding '".\output\core_cm3.o"'
+### List of Objects: adding '".\output\lpc177x_8x_gpio.o"'
+### List of Objects: adding '".\output\lpc177x_8x_systick.o"'
+### List of Objects: adding '".\output\lpc177x_8x_clkpwr.o"'
+### List of Objects: adding '".\output\lpc177x_8x_ssp.o"'
+### List of Objects: adding '".\output\lpc177x_8x_uart.o"'
+### List of Objects: adding '".\output\debug_frmwrk.o"'
+### List of Objects: adding '".\output\lpc177x_8x_pinsel.o"'
+### List of Objects: adding '".\output\lpc177x_8x_eeprom.o"'
+### List of Objects: adding '".\output\lpc177x_8x_rtc.o"'
+### List of Objects: adding '".\output\usbhost_fat.o"'
+### List of Objects: adding '".\output\usbhost_lpc17xx.o"'
+### List of Objects: adding '".\output\usbhost_ms.o"'
+### List of Objects: adding '".\output\rtc.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\output\ex_sdram.o" ".\output\main.o" ".\output\timer.o" ".\output\lpc177x_8x_lcd.o" ".\output\logo.o" ".\output\asciilib.o" ".\output\touchpanel.o" ".\output\use_disp.o" ".\output\key.o" ".\output\test.o" ".\output\globalvalue.o" ".\output\lpc177x_8x_rtc.o" ".\output\rtc.o" ".\output\startup_lpc177x_8x.o" ".\output\system_lpc177x_8x.o" ".\output\core_cm3.o" ".\output\lpc177x_8x_gpio.o" ".\output\lpc177x_8x_systick.o" ".\output\lpc177x_8x_clkpwr.o" ".\output\lpc177x_8x_ssp.o" ".\output\lpc177x_8x_uart.o" ".\output\debug_frmwrk.o" ".\output\lpc177x_8x_pinsel.o" ".\output\lpc177x_8x_eeprom.o" ".\output\lpc177x_8x_rtc.o" ".\output\usbhost_fat.o" ".\output\usbhost_lpc17xx.o" ".\output\usbhost_ms.o" ".\output\rtc.o" --strict --scatter ".\Output\project.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Listing\project.map" -o ".\Output\project.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\Output\project.axf'
+### ADS-LD Command File: '.\Output\project.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\Output\project.lnp', Handle=0x00000224
+### Writing '.lnp' file
+### ADS-LD Command file '.\Output\project.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

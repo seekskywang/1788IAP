@@ -1,0 +1,10 @@
+.\output\rtc_1.o: ..\User\rtc\rtc.c
+.\output\rtc_1.o: ..\User\rtc\rtc.h
+.\output\rtc_1.o: ..\Libraries\Drivers\include\lpc177x_8x_rtc.h
+.\output\rtc_1.o: ..\Libraries\Core\CM3\DeviceSupport\NXP\LPC177x_8x\LPC177x_8x.h
+.\output\rtc_1.o: ..\Libraries\Core\CM3\CoreSupport\core_cm3.h
+.\output\rtc_1.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\rtc_1.o: ..\Libraries\Core\CM3\CoreSupport\core_cmInstr.h
+.\output\rtc_1.o: ..\Libraries\Core\CM3\CoreSupport\core_cmFunc.h
+.\output\rtc_1.o: ..\Libraries\Drivers\include\lpc_types.h
+.\output\rtc_1.o: ..\User\Globalvalue/GlobalValue.h
