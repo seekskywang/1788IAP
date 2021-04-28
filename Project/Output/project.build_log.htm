@@ -27,8 +27,35 @@ Project File Date:  07/09/2020
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
-".\Output\project.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:00
+compiling test.c...
+..\User\Test\test.c(171): warning:  #223-D: function "RecHandle" declared implicitly
+          RecHandle();
+..\User\Test\test.c(102): warning:  #177-D: variable "addr"  was declared but never referenced
+        uint16_t addr;
+..\User\Test\test.c(103): warning:  #177-D: variable "crc1"  was declared but never referenced
+        static uint16_t crc1;
+..\User\Test\test.c(219): warning:  #223-D: function "ExceuteApplication" declared implicitly
+          ExceuteApplication();
+..\User\Test\test.c(224): warning:  #177-D: variable "bytes_read"  was declared but never referenced
+       uint32_t  bytes_read,writelen;
+..\User\Test\test.c(267): warning:  #177-D: variable "Debug_Cood"  was declared but never referenced
+        Disp_Coordinates_Typedef Debug_Cood;
+..\User\Test\test.c(414): warning:  #177-D: variable "lock_flag"  was declared but never referenced
+        vu8 lock_flag=0;
+..\User\Test\test.c(418): warning:  #177-D: variable "sendtest"  was declared but never referenced
+      vu8 sendtest[5] ={1,2,3,4,5};
+..\User\Test\test.c(3849): warning:  #550-D: variable "kind"  was set but never used
+        u8 kind=0xff;
+..\User\Test\test.c(3951): warning:  #177-D: variable "i"  was declared but never referenced
+        vu8 i;
+..\User\Test\test.c(5279): warning:  #550-D: variable "bytes_written"  was set but never used
+      uint32_t  bytes_written;
+..\User\Test\test.c: 11 warnings, 0 errors
+linking...
+Program Size: Code=62582 RO-data=23122 RW-data=292 ZI-data=21516  
+FromELF: creating hex file...
+".\Output\project.axf" - 0 Error(s), 11 Warning(s).
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

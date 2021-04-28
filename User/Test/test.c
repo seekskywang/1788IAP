@@ -308,7 +308,7 @@ void Power_Process(void)
 			Key_Beep();
             switch(key)
 			{
-				case Key_FAST:
+				case Key_UP:
                     Bin_Read();
                 break;
 				case Key_F5:
