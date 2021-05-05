@@ -619,6 +619,7 @@ extern Send_Mainord_Typedef Send_Mainord;
 //extern  vu8 MenuSelect;//菜单选择项
 #define  FILENAME_R  "update.bin"
 #define  FILENAME_W  "JK2520B.TXT"
+#define  FILENAME_S  "UP407.bin"
 extern  unsigned long SystemStatus;//系统状态
 extern unsigned long SystemMessage;//系统信息
 extern vu8 DispBuf[12];

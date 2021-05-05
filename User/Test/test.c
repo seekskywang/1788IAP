@@ -27,6 +27,7 @@ const uint8_t USB_dISPVALUE[][9]=
 	"ALL_FAIL",
 	"ALL_PASS"
 };
+uint8_t USART_TX_BUF[200];
 struct MODS_T g_tModS;
 extern volatile uint32_t timer1_counter;
 extern volatile uint32_t stable_counter;
@@ -46,6 +47,50 @@ extern vu8 negvalm;
 uint32_t keynum;
 uint32_t returnwatch;
 uint8_t upflag;
+uint32_t filesize;
+
+
+char CmdStr[CmdNumb][CmdLen] =
+{
+	{"<0/BOOT_"},        //1状态      1个字符
+//	{"<0/MOD_"},         //2 模式      1个字符   
+//	{"<0/TRIG_"},         //// 3 开关 1个字符 
+//	{"<0/SETPARA_"},           //4 内阻测试设置参数  
+//	{"<0/SETLIST_"},         //5 程控负载设置参数
+//	{"<0/SETP_?"},          //6 程控电源设置参数
+//	{"<0/SETC_?"},            //7 容量测试设置参数
+//	{"<0/ADCV_?"},          //8 查询ADC电压
+//	{"<0/ADCI_?"},          //9 查询ADC电流 
+//	{"<0/LVL_"},          // 10 设置电压
+//	{"<0/STATUS_?"},        //11 状态     1个字符 
+//	{"<0/CALV_"},        //12 测量电压校准     1个字符
+//	{"<0/CALI_"},        //13 测量电流校准     1个字符
+//	{"<0/CALR_"},        //14 电阻校准     1个字符
+//	{"<0/DAC_"},        //15 DAC   1个字符
+//	{"<0/OVER_"}, 			//16 保护信号   1个字符
+//	{"<0/TEMP_?"}, 			//17 查询温度   1个字符
+};
+
+char RecStr[CmdNumb][CmdLen] =
+{
+	{"BOOT_\0"},        //状态读取
+//	{"MOD_\0"},           //复位      1个字符   
+//	{"TRIG_\0"},           //读取CS1237电压的数据
+//	{"SETPARA_\0"},           //模式切换    1个字符  
+//	{"SETLIST_\0"},           //读取CS1237电流的数据 
+//	{"ADCI_\0"},          //ADC电流
+//	{"LM_\0"},            // 启动LM5116 1个字符 
+//	{"ADCV_\0"},          //ADC电压
+//	{"LOWI_\0"},          //被拉低时过流 1个字符 
+//	{"HORL_\0"},          //切高低档位  1个字符 
+//	{"LVL_\0"},           //DAC8562输出 A路 0~5V
+//	{"SWITCH_\0"},        //总开关     1个字符 
+//	{"CALV_\0"},        //12电压校准     1个字符 
+//	{"CALI_\0"},        //13电流校准     1个字符 
+//	{"OVER_\0"},        //14过流     1个字符 
+//	{"TEMP_\0"},        //15温度
+};
+
 const u8 DOT_POS[6]=
 {	
 	2,
@@ -254,7 +299,44 @@ void  Bin_Read(void)
     } else{
 //       PRINT_Log("\r\n write file failed\r\n");
     }
-}   
+}  
+
+void  Bin_Send(void)
+{
+	static int32_t  fdr;
+	uint32_t  bytes_read,writelen;
+	static uint32_t dstaddr;
+	uint16_t i,j;
+
+	  
+
+	fdr = FILE_Open(FILENAME_S, RDONLY);
+
+	filesize = FILE_Size(fdr);
+	if (fdr >0)
+	{
+		for(i=0;i<filesize/256;i++)
+		{
+			returnwatch =FILE_Read(fdr, UserBuffer,MAX_BUFFER_SIZE);
+		}
+	}
+
+}  
+
+void jump_boot(void)
+{
+	u8 i,len;
+	char buf[200];
+//	DE485();
+
+	strcpy(USART_TX_BUF,CmdStr[0]);
+	len = strlen(CmdStr[0]);
+	USART_TX_BUF[len+1] = 0x0d;
+	USART_TX_BUF[len+2] = 0x0a;
+	
+	UARTPuts(LPC_UART0,USART_TX_BUF);
+}
+
 
 void Power_Process(void)
 {
@@ -276,7 +358,7 @@ void Power_Process(void)
 	Beep_Off();
     i=0;
 	powerontest = 1;
-		
+	Disp_Button_TestSet(0);	
 //UART_TxCmd(LPC_UART3, ENABLE);
 	while(GetSystemStatus()==SYS_STATUS_POWER)
 	{
@@ -308,9 +390,17 @@ void Power_Process(void)
 			Key_Beep();
             switch(key)
 			{
-				case Key_FAST:
-                    Bin_Read();
-                break;
+				case Key_F1:
+				{
+					Bin_Read();
+				}break;
+				case Key_F2:
+				{
+					Bin_Send();
+				}break;
+//				case Key_FAST:
+//                    Bin_Read();
+//                break;
 				case Key_F5:
 				{
 					 Host_Init();               /* Initialize the lpc17xx host controller                                    */
@@ -2545,6 +2635,7 @@ void Use_LimitSetProcess(void)
 	Button_Page.page=0;
 	Disp_LimitList_Item();
 	Delay_Key();
+	
  	while(GetSystemStatus()==SYS_STATUS_LIMITSET)
 	{
 	  	if(Disp_flag)

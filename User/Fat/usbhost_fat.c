@@ -1044,3 +1044,14 @@ uint16_t  FAT_GetEndClus (uint16_t  clus_no)
     }
     return (clus_no);
 }
+
+uint32_t  FILE_Size(int32_t  fd)
+{
+	 FILE_ENTRY  *entry;                          /* Entry that contains the file attribute information      */
+
+    entry = &FAT_FileEntry[fd-1];                /* Get file entry from file descriptor                     */
+
+    if (entry->FileSize != 0) {
+        return entry->FileSize;
+    }
+}

@@ -1391,58 +1391,68 @@ void Disp_Button_ItemScanSet(uint32_t value)
 void Disp_Button_TestSet(uint32_t value)
 {
 	Disp_Fastbutton();
- 	if(value==0)
-	{
-			Colour.Fword=White;
-			Colour.black=LCD_COLOR_TEST_BUTON;
-			if(Save_Res.Sys_Setvalue.lanage)
-			{
-					WriteString_16(84, 271-40, "MEAS",  0);
-					WriteString_16(84, 271-20, "DISP",  0);
-					WriteString_16(84+80, 271-40, "MEAS",  0);
-					WriteString_16(84+80, 271-20, "SETUP",  0);
-					WriteString_16(84+80+80, 271-40, "SYS",  0);
-					WriteString_16(84+80+80, 271-20, "SETUP",  0);
-					WriteString_16(84+80+80+80, 271-40, "SYS",  0);
-					WriteString_16(84+80+80+80, 271-20, "INFO",  0);
-			}
-			else
-			{
-					WriteString_16(84, 271-40, "测量",  0);
-					WriteString_16(84, 271-20, "显示",  0);
-					WriteString_16(84+80, 271-40, "测量",  0);
-					WriteString_16(84+80, 271-20, "设置",  0);
-					WriteString_16(84+80+80, 271-40, "系统",  0);
-					WriteString_16(84+80+80, 271-20, "设置",  0);
-					WriteString_16(84+80+80+80, 271-40, "系统",  0);
-					WriteString_16(84+80+80+80, 271-20, "信息",  0);
-			}
-	}
-    else if(value==1)
-    {
-				Colour.Fword=White;
-				Colour.black=LCD_COLOR_TEST_BUTON;
-				if(Save_Res.Sys_Setvalue.lanage)
-				{
-				
-						WriteString_16(84, 271-40, "Files",  0);
-						WriteString_16(84, 271-20, "Manage",  0);
-						WriteString_16(84+80, 271-40, "SYS",  0);
-						WriteString_16(84+80, 271-20, "SetUp",  0);
-						WriteString_16(84+80+80, 271-30, "Tools",  0);
-						WriteString_16(84+80+80+80+80, 271-40, "More",  0);
-				}
-				else
-				{
-						WriteString_16(84, 271-40, "文件",  0);
-						WriteString_16(84, 271-20, "管理",  0);
-						WriteString_16(84+80, 271-40, "系统",  0);
-						WriteString_16(84+80, 271-20, "设置",  0);
-						WriteString_16(84+80+80, 271-30, "工具",  0);
-						WriteString_16(84+80+80+80+80, 271-40, "更多",  0);
-				}
-				WriteString_16(84+80+80+80+80, 271-20, " 2/2",  0);
-    }
+	Colour.Fword=White;
+	Colour.black=LCD_COLOR_TEST_BUTON;
+	WriteString_16(84, 271-40, "显示",  0);
+	WriteString_16(84, 271-20, "升级",  0);
+	WriteString_16(84+80, 271-40, "采集",  0);
+	WriteString_16(84+80, 271-20, "升级",  0);
+	WriteString_16(84+80+80, 271-40, "采集",  0);
+	WriteString_16(84+80+80, 271-20, "BOOT",  0);
+//	WriteString_16(84+80+80+80, 271-40, "系统",  0);
+//	WriteString_16(84+80+80+80, 271-20, "信息",  0);
+// 	if(value==0)
+//	{
+//			Colour.Fword=White;
+//			Colour.black=LCD_COLOR_TEST_BUTON;
+//			if(Save_Res.Sys_Setvalue.lanage)
+//			{
+//					WriteString_16(84, 271-40, "MEAS",  0);
+//					WriteString_16(84, 271-20, "DISP",  0);
+//					WriteString_16(84+80, 271-40, "MEAS",  0);
+//					WriteString_16(84+80, 271-20, "SETUP",  0);
+//					WriteString_16(84+80+80, 271-40, "SYS",  0);
+//					WriteString_16(84+80+80, 271-20, "SETUP",  0);
+//					WriteString_16(84+80+80+80, 271-40, "SYS",  0);
+//					WriteString_16(84+80+80+80, 271-20, "INFO",  0);
+//			}
+//			else
+//			{
+//					WriteString_16(84, 271-40, "测量",  0);
+//					WriteString_16(84, 271-20, "显示",  0);
+//					WriteString_16(84+80, 271-40, "测量",  0);
+//					WriteString_16(84+80, 271-20, "设置",  0);
+//					WriteString_16(84+80+80, 271-40, "系统",  0);
+//					WriteString_16(84+80+80, 271-20, "设置",  0);
+//					WriteString_16(84+80+80+80, 271-40, "系统",  0);
+//					WriteString_16(84+80+80+80, 271-20, "信息",  0);
+//			}
+//	}
+//    else if(value==1)
+//    {
+//				Colour.Fword=White;
+//				Colour.black=LCD_COLOR_TEST_BUTON;
+//				if(Save_Res.Sys_Setvalue.lanage)
+//				{
+//				
+//						WriteString_16(84, 271-40, "Files",  0);
+//						WriteString_16(84, 271-20, "Manage",  0);
+//						WriteString_16(84+80, 271-40, "SYS",  0);
+//						WriteString_16(84+80, 271-20, "SetUp",  0);
+//						WriteString_16(84+80+80, 271-30, "Tools",  0);
+//						WriteString_16(84+80+80+80+80, 271-40, "More",  0);
+//				}
+//				else
+//				{
+//						WriteString_16(84, 271-40, "文件",  0);
+//						WriteString_16(84, 271-20, "管理",  0);
+//						WriteString_16(84+80, 271-40, "系统",  0);
+//						WriteString_16(84+80, 271-20, "设置",  0);
+//						WriteString_16(84+80+80, 271-30, "工具",  0);
+//						WriteString_16(84+80+80+80+80, 271-40, "更多",  0);
+//				}
+//				WriteString_16(84+80+80+80+80, 271-20, " 2/2",  0);
+//    }
 
 
 }
@@ -1499,6 +1509,7 @@ void Disp_TestScreen(void)
 void Disp_Instruction(void)
 {
 	uint8_t i;
+	Colour.black=LCD_COLOR_TEST_BACK;
 	Colour.Fword=LCD_COLOR_GREEN;
 	for(i=0;i<3;i++)
 	{
@@ -1506,7 +1517,7 @@ void Disp_Instruction(void)
 	}
 	WriteString_16(0, 0, "升级说明",  0);
 	WriteString_16(22, 26, "插入U盘,并按下右下角的U盘连接键",  0);
-	WriteString_16(22, 26+1*22, "若标识变成绿色则说明连接成功,再按下中间键开始升级",  0);
+	WriteString_16(22, 26+1*22, "若标识变成绿色则说明连接成功,再按下对应键开始升级",  0);
 	WriteString_16(22, 26+2*22, "升级完成后会自动跳转主程序,若黑屏请断开电源后再上电重启",  0);
 }
 //测量显示主菜单的项目显示
@@ -4903,7 +4914,7 @@ void SetData_High_Low_Comp(void)
 }
 void Disp_Usbflag(uint8_t flag)
 {
-	Colour.black=LCD_COLOR_TEST_BACK;
+	Colour.black=LCD_COLOR_TEST_BUTON;
 	if(flag==1)
 		Colour.Fword=LCD_COLOR_GREEN;
 		

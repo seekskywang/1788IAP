@@ -531,11 +531,11 @@ void debug_frmwrk_init(void)
 #elif (USED_UART_DEBUG_PORT == 3)
 	/*
 	 * Initialize UART3 pin connect
-	 * P0.0: TXD
-	 * P0.1: RXD
+	 * P0.2: TXD
+	 * P0.3: RXD
 	 */
-	PINSEL_ConfigPin(0, 0, 2);
-	PINSEL_ConfigPin(0, 1, 2);
+	PINSEL_ConfigPin(0, 2, 2);
+	PINSEL_ConfigPin(0, 3, 2);
 #elif (USED_UART_DEBUG_PORT == 4)
 	/*
 	 * Initialize UART4 pin connect
@@ -555,8 +555,8 @@ void debug_frmwrk_init(void)
 	 */
 	UART_ConfigStructInit(&UARTConfigStruct);
 	// Re-configure baudrate to 115200bps
-	UARTConfigStruct.Baud_rate = 9600;
-
+	UARTConfigStruct.Baud_rate = 115200;
+//	UARTConfigStruct.Baud_rate = 9600;
 	// Initialize DEBUG_UART_PORT peripheral with given to corresponding parameter
 	UART_Init(DEBUG_UART_PORT, &UARTConfigStruct);//|UART_INTCFG_THRE
 	UART_IntConfig(LPC_UART0,UART_INTCFG_RBR,ENABLE);

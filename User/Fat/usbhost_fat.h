@@ -142,5 +142,5 @@ int32_t  FAT_CreateEntry (          uint8_t  *ent_name_given,
 void     FILE_Close      (          int32_t   fd);
 
 uint16_t FAT_GetEndClus  (          uint16_t   clus_no);
-
+uint32_t  FILE_Size(int32_t  fd);
 #endif

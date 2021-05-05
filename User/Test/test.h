@@ -2,10 +2,25 @@
 #define __test_h
 #include "stdint.h"
 #include  "Globalvalue/globalvalue.h"
-#define  MAX_BUFFER_SIZE             (1024)/*(4000)*/
+#define  MAX_BUFFER_SIZE             (256)/*(4000)*/
 #define  WRITE_SIZE          (10 * 1000000)
 #define  FILENAME_b  "jk2520b.TXT"
 extern const vu8 Disp_Main_Ord[][3];
+
+#define  CmdNumb         17
+#define  CmdLen          12 
+
+#define ChrStartR      0x3E
+#define ChrStartS      0x3C
+
+#define ChrEndR    	   0x0D
+#define ChrEndS    	   0x0A
+
+#define PARA_ERR       1
+#define CMD_ERR        2
+#define REM_ERR        3
+
+
 void Power_Process(void);
 
 

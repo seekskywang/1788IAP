@@ -27,8 +27,89 @@ Project File Date:  07/09/2020
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
-".\Output\project.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:00
+compiling main.c...
+..\User\main.c(108): warning:  #177-D: variable "rc"  was declared but never referenced
+        uint8_t key,rc;
+..\User\main.c: 1 warning, 0 errors
+compiling use_disp.c...
+..\User\UseDisp\use_disp.c(1699): warning:  #175-D: subscript out of range
+        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
+..\User\UseDisp\use_disp.c(1701): warning:  #175-D: subscript out of range
+                Hex_Format(SaveData.Limit_Tab.Comp_Value[9].high.Num, 
+..\User\UseDisp\use_disp.c(1702): warning:  #175-D: subscript out of range
+                        SaveData.Limit_Tab.Comp_Value[9].high.Dot , 6 , 1);//加单位//加单位
+..\User\UseDisp\use_disp.c(1727): warning:  #175-D: subscript out of range
+        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
+..\User\UseDisp\use_disp.c(1729): warning:  #175-D: subscript out of range
+                        Hex_Format(SaveData.Limit_Tab.Comp_Value[9].low.Num, 
+..\User\UseDisp\use_disp.c(1730): warning:  #175-D: subscript out of range
+                        SaveData.Limit_Tab.Comp_Value[9].low.Dot , 6 , 1);//加单位
+..\User\UseDisp\use_disp.c(3102): warning:  #177-D: variable "Black_Select"  was declared but never referenced
+        vu32 Black_Select;
+..\User\UseDisp\use_disp.c(4500): warning:  #223-D: function "Plc_PosV" declared implicitly
+                        Plc_PosV();
+..\User\UseDisp\use_disp.c(4519): warning:  #223-D: function "Plc_PosV" declared implicitly
+                                Plc_PosV();
+..\User\UseDisp\use_disp.c(4521): warning:  #223-D: function "Plc_NegV" declared implicitly
+                                Plc_NegV();
+..\User\UseDisp\use_disp.c(4562): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4594): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4607): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4621): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART3, buff);
+..\User\UseDisp\use_disp.c(4613): warning:  #177-D: variable "Send_buff"  was declared but never referenced
+        vu8 Send_buff[10]={0xAB,0X00,0xbf,0};
+..\User\UseDisp\use_disp.c(4652): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4855): warning:  #177-D: variable "pt"  was declared but never referenced
+        vu8 *pt;
+..\User\UseDisp\use_disp.c: 17 warnings, 0 errors
+compiling test.c...
+..\User\Test\test.c(216): warning:  #223-D: function "RecHandle" declared implicitly
+          RecHandle();
+..\User\Test\test.c(147): warning:  #177-D: variable "addr"  was declared but never referenced
+        uint16_t addr;
+..\User\Test\test.c(148): warning:  #177-D: variable "crc1"  was declared but never referenced
+        static uint16_t crc1;
+..\User\Test\test.c(264): warning:  #223-D: function "ExceuteApplication" declared implicitly
+          ExceuteApplication();
+..\User\Test\test.c(269): warning:  #177-D: variable "bytes_read"  was declared but never referenced
+       uint32_t  bytes_read,writelen;
+..\User\Test\test.c(307): warning:  #177-D: variable "bytes_read"  was declared but never referenced
+        uint32_t  bytes_read,writelen;
+..\User\Test\test.c(307): warning:  #177-D: variable "writelen"  was declared but never referenced
+        uint32_t  bytes_read,writelen;
+..\User\Test\test.c(308): warning:  #177-D: variable "dstaddr"  was declared but never referenced
+        static uint32_t dstaddr;
+..\User\Test\test.c(309): warning:  #177-D: variable "j"  was declared but never referenced
+        uint16_t i,j;
+..\User\Test\test.c(329): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+        strcpy(USART_TX_BUF,CmdStr[0]);
+..\User\Test\test.c(325): warning:  #177-D: variable "i"  was declared but never referenced
+        u8 i,len;
+..\User\Test\test.c(326): warning:  #177-D: variable "buf"  was declared but never referenced
+        char buf[200];
+..\User\Test\test.c(346): warning:  #177-D: variable "Debug_Cood"  was declared but never referenced
+        Disp_Coordinates_Typedef Debug_Cood;
+..\User\Test\test.c(501): warning:  #177-D: variable "lock_flag"  was declared but never referenced
+        vu8 lock_flag=0;
+..\User\Test\test.c(505): warning:  #177-D: variable "sendtest"  was declared but never referenced
+      vu8 sendtest[5] ={1,2,3,4,5};
+..\User\Test\test.c(3937): warning:  #550-D: variable "kind"  was set but never used
+        u8 kind=0xff;
+..\User\Test\test.c(4039): warning:  #177-D: variable "i"  was declared but never referenced
+        vu8 i;
+..\User\Test\test.c(5367): warning:  #550-D: variable "bytes_written"  was set but never used
+      uint32_t  bytes_written;
+..\User\Test\test.c: 18 warnings, 0 errors
+linking...
+Program Size: Code=62454 RO-data=23330 RW-data=504 ZI-data=21712  
+FromELF: creating hex file...
+".\Output\project.axf" - 0 Error(s), 36 Warning(s).
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>
