@@ -123,7 +123,7 @@ int main(void)
 //    Beep_on();
     GPIO_Plc_Configuration();
     
-    debug_frmwrk_init();
+//    debug_frmwrk_init();
 	softswitch=0;
     SDRAM_Init();
     GLCD_Ctrl (FALSE);

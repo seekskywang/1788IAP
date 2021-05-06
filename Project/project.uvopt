@@ -132,6 +132,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
+          <Name>卢vw膅?膅?趏?</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -433,6 +434,11 @@
           <WinNumber>2</WinNumber>
           <ItemText>filesize,0x0A</ItemText>
         </Ww>
+        <Ww>
+          <count>16</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>upsend</ItemText>
+        </Ww>
       </WatchWindow2>
       <Tracepoint>
         <THDelay>0</THDelay>
@@ -458,7 +464,7 @@
         <aPa1>0</aPa1>
         <AscS4>0</AscS4>
         <aSer4>0</aSer4>
-        <StkLoc>0</StkLoc>
+        <StkLoc>1</StkLoc>
         <TrcWin>0</TrcWin>
         <newCpu>0</newCpu>
         <uProt>0</uProt>

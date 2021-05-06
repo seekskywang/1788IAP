@@ -48,7 +48,7 @@ uint32_t keynum;
 uint32_t returnwatch;
 uint8_t upflag;
 uint32_t filesize;
-
+uint8_t upsend[256]; 
 
 char CmdStr[CmdNumb][CmdLen] =
 {
@@ -260,6 +260,12 @@ void jumpboot(void)
 //	  SCB->DFSR = 0xFFFFFFFF;
 //	  NVIC_DisableIRQ(MCI_IRQn);
 //	  __disable_irq();
+//	  UART_DeInit(DEBUG_UART_PORT);//|UART_INTCFG_THRE
+//	UART_IntConfig(LPC_UART0,UART_INTCFG_RBR,DISABLE);
+	//NVIC_SetPriority(UART0_IRQn, ((0x01<<3)|0x01));//??UART2?????
+//	 NVIC_DisableIRQ(UART0_IRQn);
+	// Enable UART Transmit
+//	UART_TxCmd(DEBUG_UART_PORT, DISABLE);
 	  SCB->VTOR  =APP_START_ADDR & 0x1FFFFF80;
 	  ExceuteApplication();
 }
@@ -349,6 +355,7 @@ void Power_Process(void)
 	Disp_Coordinates_Typedef Debug_Cood;
 //	u8 rc;
 //
+	
 	lcd_Clear(LCD_COLOR_TEST_BACK);
 	Host_Init(); 
 	rc = Host_EnumDev();       
@@ -356,6 +363,7 @@ void Power_Process(void)
     Beep_on();
 
 	Beep_Off();
+//	debug_frmwrk_init();
     i=0;
 	powerontest = 1;
 	Disp_Button_TestSet(0);	
