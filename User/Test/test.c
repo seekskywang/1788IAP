@@ -223,34 +223,35 @@ void  Bin_Read(void)
      static int32_t  fdr;
      uint32_t  bytes_read,writelen;
      static uint32_t dstaddr;
-     returnwatch=SelSector(APP_START_SECTOR,APP_END_SECTOR);        //选择扇区
-     returnwatch=EraseSector(APP_START_SECTOR,APP_END_SECTOR);                         
-     returnwatch=BlankCHK(APP_START_SECTOR,APP_END_SECTOR);                            
-     returnwatch=SelSector(APP_START_SECTOR,APP_END_SECTOR);    
+       
 //     PRINT_Log("\r\nstart file operations...\r\n");
 
    fdr = FILE_Open(FILENAME_R, RDONLY);
     if (fdr >0) {
+		returnwatch=SelSector(APP_START_SECTOR,APP_END_SECTOR);        //选择扇区
+		 returnwatch=EraseSector(APP_START_SECTOR,APP_END_SECTOR);                         
+		 returnwatch=BlankCHK(APP_START_SECTOR,APP_END_SECTOR);                            
+		 returnwatch=SelSector(APP_START_SECTOR,APP_END_SECTOR);  
 //       PRINT_Log("Reading from %s...\n", FILENAME_R);
-  for(writelen=0;writelen<(APP_END_ADDR-APP_START_ADDR)/1024;writelen++)
-   {
-//    bytes_read =FILE_Read(fdr, UserBuffer,MAX_BUFFER_SIZE);           
-//    dstaddr=  (uint32_t)(APP_START_ADDR +(writelen)*1024);//dst address.  
-//   SelSector(APP_START_SECTOR,APP_END_SECTOR);    
-//   RamToFlash(dstaddr,(uint32_t)UserBuffer, 1024);
-//   Compare(dstaddr, (uint32_t)UserBuffer, 1024);
-	   
-	   returnwatch =FILE_Read(fdr, UserBuffer,MAX_BUFFER_SIZE);           
-       dstaddr=  (uint32_t)(APP_START_ADDR +(writelen)*1024);//dst address.  
-	   returnwatch = SelSector(APP_START_SECTOR,APP_END_SECTOR);    
-       returnwatch = RamToFlash(dstaddr,(uint32_t)UserBuffer, 1024);
-       returnwatch = Compare(dstaddr, (uint32_t)UserBuffer, 1024);
-   }  
+		for(writelen=0;writelen<(APP_END_ADDR-APP_START_ADDR)/1024;writelen++)
+		{
+	//    bytes_read =FILE_Read(fdr, UserBuffer,MAX_BUFFER_SIZE);           
+	//    dstaddr=  (uint32_t)(APP_START_ADDR +(writelen)*1024);//dst address.  
+	//   SelSector(APP_START_SECTOR,APP_END_SECTOR);    
+	//   RamToFlash(dstaddr,(uint32_t)UserBuffer, 1024);
+	//   Compare(dstaddr, (uint32_t)UserBuffer, 1024);
+		   
+		   returnwatch =FILE_Read(fdr, UserBuffer,MAX_BUFFER_SIZE);           
+		   dstaddr=  (uint32_t)(APP_START_ADDR +(writelen)*1024);//dst address.  
+		   returnwatch = SelSector(APP_START_SECTOR,APP_END_SECTOR);    
+		   returnwatch = RamToFlash(dstaddr,(uint32_t)UserBuffer, 1024);
+		   returnwatch = Compare(dstaddr, (uint32_t)UserBuffer, 1024);
+		}  
   // printf("%x",writelen);
 //  PRINT_Log("\r\n write filesuccessful\r\n");
 //   SCB->VTOR  =APP_START_ADDR;                                             
-   jumpboot();                                                      
-   FILE_Close(fdr);                                                            
+		jumpboot();                                                      
+		FILE_Close(fdr);                                                            
     } else{
 //       PRINT_Log("\r\n write file failed\r\n");
     }
@@ -309,7 +310,10 @@ void Power_Process(void)
             switch(key)
 			{
 				case Key_UP:
-                    Bin_Read();
+					if(usb_oenflag == 1)
+					{
+						Bin_Read();
+					}
                 break;
 				case Key_F5:
 				{
