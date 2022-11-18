@@ -450,8 +450,8 @@ ARM Macro Assembler    Page 7
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=.\output\startup_lpc177x_8x.d -o.\output\startup_lpc177x_8x.o -ID:
-\Keil_v5\ARM\RV31\INC -ID:\Keil_v5\ARM\CMSIS\Include -ID:\Keil_v5\ARM\INC\NXP\L
+ork --depend=.\output\startup_lpc177x_8x.d -o.\output\startup_lpc177x_8x.o -IE:
+\Keil_v5\ARM\RV31\INC -IE:\Keil_v5\ARM\CMSIS\Include -IE:\Keil_v5\ARM\INC\NXP\L
 PC177x_8x --predefine="__UVISION_VERSION SETA 525" --list=.\listing\startup_lpc
 
 

@@ -22,11 +22,70 @@ Dialog DLL:      TARMP1.DLL V1.26.0.0
  
 <h2>Project:</h2>
 F:\1788IAP\Project\project.uvproj
-Project File Date:  05/05/2021
+Project File Date:  04/26/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Open1788'
+compiling EX_SDRAM.c...
+compiling main.c...
+..\User\main.c(108): warning:  #177-D: variable "rc"  was declared but never referenced
+        uint8_t key,rc;
+..\User\main.c: 1 warning, 0 errors
+compiling timer.c...
+compiling lpc177x_8x_lcd.c...
+..\User\hzk.h(1100): warning:  #375-D: declaration requires a typedef name
+  };
+..\User\LCD\lpc177x_8x_lcd.c(52): warning:  #177-D: variable "pDst"  was declared but never referenced
+        unsigned long *pDst = (unsigned long *)LCD_VRAM_BASE_ADDR;
+..\User\LCD\lpc177x_8x_lcd.c(513): warning:  #177-D: variable "i"  was declared but never referenced
+      uint16_t i,j;
+..\User\LCD\lpc177x_8x_lcd.c(760): warning:  #177-D: variable "usIndex"  was declared but never referenced
+        uint16_t usIndex=0;
+..\User\LCD\lpc177x_8x_lcd.c: 4 warnings, 0 errors
+compiling logo.c...
+compiling AsciiLib.c...
+compiling TouchPanel.c...
+..\User\TouchPanel\TouchPanel.c(373): warning:  #223-D: function "LCD_SetPoint" declared implicitly
+    LCD_SetPoint(Xpos,Ypos,Blue);     /* Center point */
+..\User\TouchPanel\TouchPanel.c: 1 warning, 0 errors
+compiling use_disp.c...
+..\User\UseDisp\use_disp.c(1688): warning:  #175-D: subscript out of range
+        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
+..\User\UseDisp\use_disp.c(1690): warning:  #175-D: subscript out of range
+                Hex_Format(SaveData.Limit_Tab.Comp_Value[9].high.Num, 
+..\User\UseDisp\use_disp.c(1691): warning:  #175-D: subscript out of range
+                        SaveData.Limit_Tab.Comp_Value[9].high.Dot , 6 , 1);//加单位//加单位
+..\User\UseDisp\use_disp.c(1716): warning:  #175-D: subscript out of range
+        if(SaveData.Limit_Tab.Comp_Value[9].high.Num!=0)
+..\User\UseDisp\use_disp.c(1718): warning:  #175-D: subscript out of range
+                        Hex_Format(SaveData.Limit_Tab.Comp_Value[9].low.Num, 
+..\User\UseDisp\use_disp.c(1719): warning:  #175-D: subscript out of range
+                        SaveData.Limit_Tab.Comp_Value[9].low.Dot , 6 , 1);//加单位
+..\User\UseDisp\use_disp.c(3091): warning:  #177-D: variable "Black_Select"  was declared but never referenced
+        vu32 Black_Select;
+..\User\UseDisp\use_disp.c(4489): warning:  #223-D: function "Plc_PosV" declared implicitly
+                        Plc_PosV();
+..\User\UseDisp\use_disp.c(4508): warning:  #223-D: function "Plc_PosV" declared implicitly
+                                Plc_PosV();
+..\User\UseDisp\use_disp.c(4510): warning:  #223-D: function "Plc_NegV" declared implicitly
+                                Plc_NegV();
+..\User\UseDisp\use_disp.c(4551): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4583): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4596): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4610): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART3, buff);
+..\User\UseDisp\use_disp.c(4602): warning:  #177-D: variable "Send_buff"  was declared but never referenced
+        vu8 Send_buff[10]={0xAB,0X00,0xbf,0};
+..\User\UseDisp\use_disp.c(4641): warning:  #223-D: function "UARTPuts" declared implicitly
+        UARTPuts( LPC_UART0, Send_buff);
+..\User\UseDisp\use_disp.c(4844): warning:  #177-D: variable "pt"  was declared but never referenced
+        vu8 *pt;
+..\User\UseDisp\use_disp.c: 17 warnings, 0 errors
+compiling key.c...
 compiling test.c...
 ..\User\Test\test.c(171): warning:  #223-D: function "RecHandle" declared implicitly
           RecHandle();
@@ -51,11 +110,89 @@ compiling test.c...
 ..\User\Test\test.c(5283): warning:  #550-D: variable "bytes_written"  was set but never used
       uint32_t  bytes_written;
 ..\User\Test\test.c: 11 warnings, 0 errors
+compiling GlobalValue.c...
+compiling IAP.c...
+..\User\IAP\IAP.c(176): warning:  #1-D: last line of file ends without a newline
+  }
+..\User\IAP\IAP.c: 1 warning, 0 errors
+assembling startup_LPC177x_8x.s...
+compiling system_LPC177x_8x.c...
+compiling core_cm3.c...
+compiling lpc177x_8x_gpio.c...
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(347): warning:  #188-D: enumerated type mixed with another type
+                return (((LPC_GPIOINT->IO0IntStatR)>>pinNum)& 0x1);
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(349): warning:  #188-D: enumerated type mixed with another type
+                return (((LPC_GPIOINT->IO2IntStatR)>>pinNum)& 0x1);
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(351): warning:  #188-D: enumerated type mixed with another type
+                return (((LPC_GPIOINT->IO0IntStatF)>>pinNum)& 0x1);
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(353): warning:  #188-D: enumerated type mixed with another type
+                return (((LPC_GPIOINT->IO2IntStatF)>>pinNum)& 0x1);
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(707): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(715): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(751): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(758): warning:  #186-D: pointless comparison of unsigned integer with zero
+                        if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(786): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(814): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c(837): warning:  #186-D: pointless comparison of unsigned integer with zero
+                if ((byteNum >= 0) && (byteNum <= 3))
+..\Libraries\Drivers\source\lpc177x_8x_gpio.c: 11 warnings, 0 errors
+compiling lpc177x_8x_systick.c...
+compiling lpc177x_8x_clkpwr.c...
+compiling lpc177x_8x_ssp.c...
+compiling lpc177x_8x_uart.c...
+compiling debug_frmwrk.c...
+..\Libraries\Drivers\source\debug_frmwrk.c(492): warning:  #223-D: function "vsprintf" declared implicitly
+      vsprintf((char *)buffer, (char const *)format, vArgs);
+..\Libraries\Drivers\source\debug_frmwrk.c(490): warning:  #177-D: variable "tmp"  was declared but never referenced
+              char      *tmp;
+..\Libraries\Drivers\source\debug_frmwrk.c(677): warning:  #177-D: variable "rxbuf"  was declared but never referenced
+        uint8_t *rxbuf;
+..\Libraries\Drivers\source\debug_frmwrk.c(864): warning:  #223-D: function "memcpy" declared implicitly
+        memcpy(buf, _pBuf, _ucLen);
+..\Libraries\Drivers\source\debug_frmwrk.c(881): warning:  #177-D: variable "dat"  was declared but never referenced
+      static uint8_t Status,dat;
+..\Libraries\Drivers\source\debug_frmwrk.c(882): warning:  #177-D: variable "rxbuf"  was declared but never referenced
+      uint8_t *rxbuf;
+..\Libraries\Drivers\source\debug_frmwrk.c(1110): warning:  #550-D: variable "reg"  was set but never used
+      uint16_t reg;
+..\Libraries\Drivers\source\debug_frmwrk.c(1111): warning:  #550-D: variable "value"  was set but never used
+        uint16_t value;
+..\Libraries\Drivers\source\debug_frmwrk.c(726): warning:  #177-D: function "MODS_SendAckErr"  was declared but never referenced
+  static void MODS_SendAckErr(uint8_t _ucErrCode)
+..\Libraries\Drivers\source\debug_frmwrk.c(746): warning:  #177-D: function "MODS_SendAckOk"  was declared but never referenced
+  static void MODS_SendAckOk(void)
+..\Libraries\Drivers\source\debug_frmwrk.c: 10 warnings, 0 errors
+compiling lpc177x_8x_pinsel.c...
+compiling lpc177x_8x_eeprom.c...
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(109): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint8_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(119): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint16_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(129): warning:  #1441-D: nonstandard cast on lvalue
+                        LPC_EEPROM -> WDATA = *(((uint32_t *)data)++);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(198): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint8_t *)data)++) = (uint8_t)(LPC_EEPROM -> RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(208): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint16_t *)data)++) = (uint16_t)(LPC_EEPROM -> RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c(217): warning:  #1441-D: nonstandard cast on lvalue
+                         *(((uint32_t *)data)++) = (uint32_t)(LPC_EEPROM ->RDATA);
+..\Libraries\Drivers\source\lpc177x_8x_eeprom.c: 6 warnings, 0 errors
+compiling lpc177x_8x_rtc.c...
+compiling usbhost_fat.c...
+compiling usbhost_lpc17xx.c...
+compiling usbhost_ms.c...
+compiling rtc.c...
 linking...
 Program Size: Code=62586 RO-data=23126 RW-data=292 ZI-data=21516  
 FromELF: creating hex file...
-".\Output\project.axf" - 0 Error(s), 11 Warning(s).
-Build Time Elapsed:  00:00:02
+".\Output\project.axf" - 0 Error(s), 62 Warning(s).
+Build Time Elapsed:  00:00:15
 </pre>
 </body>
 </html>
